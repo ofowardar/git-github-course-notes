@@ -168,3 +168,12 @@ git tag -a v0.1-data_prep -m "İlk Veri Analizi"
 
 
 Bu dosyayı değiştirerek commit atacağım.
+
+
+Fork Requests: Fork işlemi mevcut bir projenin mevcut durumunun bir kopyasını kendi GitHub hesabımıza aldığımız durumdur.
+
+Fork neden kullanılır ? 
+
+Orijinal sürümü bozmadan kendi kopyamız üzerine çalışabilmek için.
+Proje sahibine katkı sağlamak için 
+
