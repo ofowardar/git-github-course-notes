@@ -177,4 +177,8 @@ Fork neden kullanılır ?
 Orijinal sürümü bozmadan kendi kopyamız üzerine çalışabilmek için.
 Proje sahibine katkı sağlamak için kullanılır.
 
+GitHub actions kısmı sonra izlenecek !!!!!!!!!!
 
+
+GitHub pages, reponuza dair kişisel bir web sayfası oluşturmak ve yayınlamak için kullanılmaktadır.
+özellikle portföyünüzü ortay açıkarmak ve statik bir web sitesi üzedrinde sergilemek için de sıkça kullanılır.
