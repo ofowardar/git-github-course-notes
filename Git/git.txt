@@ -175,5 +175,6 @@ Fork Requests: Fork işlemi mevcut bir projenin mevcut durumunun bir kopyasını
 Fork neden kullanılır ? 
 
 Orijinal sürümü bozmadan kendi kopyamız üzerine çalışabilmek için.
-Proje sahibine katkı sağlamak için 
+Proje sahibine katkı sağlamak için kullanılır.
+
 
