@@ -1,0 +1,127 @@
+Git: Yazılım geliştirme sürecinde kullanılan bir sürüm kontrol ve kaynak yönetim sistemidir.
+
+Sürüm Kontrolu: Bir dosyada yapılan değişiklikleri izlemeye ve yönetmeye yardımcı olan sistemdir. Değişikliklerin geri alınması kaydedilmesini sağlar.
+
+Versiyon Kontrol Sistemleri ikiye ayrılır:
+- Merkezi Versiyon Kontrol Sistemleri: Birden fazla kişinin aynı proje üzerinde etkili çalışması adına geliştirilmiş versiyon sistemidir. Tüm ekip üyeleri, kodun en son kopyasını almak ve değişiklikleri başkaları ile paylaşmak için merkezi bir sunucuya bağlanır ancak sunucu offline olma durumunda değişiklikler kaydedilmeyebilir.
+
+- Dağıtık Versiyon Sistemleri: Merkezi versiyon sistemlerinde geliştiricilerin offline çalışabilmesi ve sorun oluşması durumunda verileri tekrar yükleme gibi sorunlarından dolayı geliştirilmiştir örnekleri git,mercurial,bazaar,BitKeeper
+
+
+
+Farklı Git Arabirimleri:
+
+Terminal Bazlı:
+Git Bash
+Git Cmd
+
+Grafiksel Bazlı:
+GitKraken
+SourceTree
+GitHub Desktop
+
+IDE bazlı:
+Vscode
+IntelliJ
+
+
+Git konfigürasyonları için "git config" kullanılır ve 3 ek parametre alır:
+git config --system sistemdeki tüm kullanıcılar ve depolar için
+git config --global mevcut kullanıcının tüm depoları için
+git config --local yalnızca mevcut repo için geçerli olan ayarlar.
+
+
+Kimlik Doğrulama (SSH ve HTTPS): Kodun güvenliğini ve iş akışını sağlamak için bir adımdır.
+
+
+-------------------------------------------------------------------------------------------------
+
+Git Terminolojisi ve İç Yapısı 
+
+Git Repository: Projenin dosyalaarını ve her dosyanın revizyon geçmişinin depolandığın bir dijital dizin veya depolama alanıdır. Sürüm kontrolunu ve işbirlikçi çalışmayı mümkün kılan Git'in temel unsurudur.
+
+Bir Repodaki dosyalar değişikliği ve o değişikliği kimin ne zxaman yaptığını gösterir ve geri eski haline dönmemizi kolaylaştırır.
+
+
+Git Branch : kod tabnanının paralel bir sürümü gibidir ve geliştiriclerin ana koddan bağımsız çalışmasına olanak tanır. Bu yeni özelliklerin,denemelerin veya düzeltilmenin ana kodu bozmadan denenmesine olanak sağlar. Proje geliştirilmesi için fikirler farklı branchlarda denenebilir.
+
+master veya main branch kaynak kodunun kararlı ve üretime dağıtıma hazır olduğu varsayılan daldır. Tüm özellik branchlar gelişitirme ve test sonrasında en sonunda master/main branchlarda birleştirirlir.
+
+- git checkout -b master # master adında yeni bir dal oluştur
+- git checkout -b main   # main adında bir dal oluştur
+
+- git checkout master    # mastrer brancına geçiş yap ve masterde değişiklik yap commit et 
+
+- git checkout main     # üstteki gibi işte.
+
+
+Git commit: her bir commit projenin anlık görüntüsü gibidir hangi tarihte hangi dosyada hangi değişiklik yapılmış bunları kim yapmış gibi bilgiler taşır. önceki sürüme geri dönmek için gereklidir.
+
+
+Staging Alanı: 'Index' olarak da bilinen hazırlama alanı, dosyaların işleme alınmadn önce sıralandığı bir hazırlık alanıdır. geliştiricilerin bir sonraki commits parçası olacak değişiklikleri seçmesine olanak tanır.
+
+
+Git 'Head' komutu : Mevcut git deposunda çalışma noktasını öğrenmek için kullanılır. Projenin navigasyonunda ve mevcut durumun anlaşılmasında büyük rol oynar.
+
+Git Checkout komutu: git deposundaki branchlar arasında geçiş yapmak için kullanılır.
+
+Merge : Değişiklikleri bir daldan diğerine entegre etme sürecidir.
+
+Local Repo ve Remote Repo: bilgisayar ve gitHub gibi
+
+Git Hooks : git in komutlardan önce veya sonra çalıştırdığu özel scriptlerdir.
+
+Submodels : bir girt deposunu başka bir git deposunun alt dizini olarak tutmanıza olanak tanır. Bu, deponuza harici projeler veya kitaplıklar eklemek için kullanışlıdır.
+
+Subtrees: submodels gibidir geçmiş durumu korur.
+
+Tagging: git geçmişindeki belirli noktalara işaret eden referanslardır genelde sürüm noktalarını işaretlemek için kullanılır. Statiktir ve değişmezler 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Temel Git Komutları:
+
+Git init: Git deposu başlatır.
+
+Git clone: uzxak bir depoyu makinemize klonlar.
+
+Git add : Değişiklikleri staging alanına ekleme komutumuz.
+
+Git commit: staging alanındaki değişiklikleri depoya kaydeder.
+
+git branch: yeni dallar oluşturur ve var olan dalları gösterir.    - branch silmek için git branch -d branchadi.
+
+git checkout : farklı branchlar arasında geçiş yapar veya dosyaları eski durumlarına getirir.    - yeni branch ekleme git checkout -b branchadi.
+
+
+git push: yereldekileri remote aktarır.
+
+git pull: uzaktakine locale
+
+git marge: iki branch değişikliklerini birleştirir.
+
+git status: depodaki değişlikliklerin durumlarını gösterir.
+
+
+---------------------------------------------------------------------------------
+
+
+Git reset komutu, değişiklikleri geri almak ve bundan sonra yapılan tüm comitleri atarken belirli bir işleme geri dönmke için kullanılır.
+
+git reset --soft  local repodan staging alanına geri dönüyor
+git reset --mixed seçeneği --softun işlevselleiğine ve staging alanındaki değişiklikleri sıfırlama ek özelliğine sahip.
+git --hard repo ve hazırlama alanını sıfırladıktan sonra çalışma dizinindeki değişiklikleri de sıfırlar. dikkat etmek lazım kaydedilmemiş tüm değişiklikler gider.
+
+
+Git revert komutu :
+
+Revert komutu, commit edilmiş bir değişikliği otomatik olarak yeni bir commit oluşturarak geri almanızı sağlar.
+bu özelliği ile aslında yapılan ve geri döndürülen işlemler proje tarihginde belirtiliyor.
+
+Git restore:
+
+staging alanındaki değişiklikleri geri alır.
+
+
+Git commit -amend -m "adsa" ile local areaya aldığımız commitlerin ismini değiştirebiliriz.
