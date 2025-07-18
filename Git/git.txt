@@ -124,4 +124,4 @@ Git restore:
 staging alanındaki değişiklikleri geri alır.
 
 
-Git commit -amend -m "adsa" ile local areaya aldığımız commitlerin ismini değiştirebiliriz.
+Git commit -amend -m "adsa" ile local areaya aldığımız commitlerin ismini değiştirebiliriz.........
