@@ -1,0 +1,1 @@
+Readme dosyamı da ekledim.
