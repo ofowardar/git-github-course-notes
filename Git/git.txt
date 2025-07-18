@@ -124,4 +124,47 @@ Git restore:
 staging alanındaki değişiklikleri geri alır.
 
 
-Git commit -amend -m "adsa" ile local areaya aldığımız commitlerin ismini değiştirebiliriz.........
+Git commit -amend -m "adsa" ile local areaya aldığımız commitlerin ismini değiştirebiliriz.
+
+Branch Marge işlemleri:
+
+mesela yeni bir branch oluşturduk ve onu mastere merge edicez
+
+git checkout -b feature yeni branch olustur
+değişiklikleri yaptık commit ekledik
+git checkout master ile mastere geçtik
+git merge < master ile birleştirmek istediğimiz branch>
+git branch --delete feature eski branch sil
+
+! Branchi yeniden isimlendirmek için git checkout -m "Yeni isim"
+
+Remote Repositories: Bir branchı uzak bir repoya göndermek için
+git remote add origin <https- veya ssh>
+git push origin <brachadi>
+
+uzaktaki bir repoyu locale çekmek için
+git clone <url>
+
+
+Merge Conflicts ve Resole işlemleri: aynı dosya üzerinde farklı kişilierin düzenleme yapıp masterda merge işlemi yapması sonucu sistem hangi değişikliğin doğru olduğu hakkında çakışma yaşar.
+
+
+
+Rebasing: bir alt dalın üst dala dayanmasına denir. mesela b3 dalında yaptığım değişikliği mastere da uygulayabilirim.
+üst dalda iken 
+git rebase daladi
+
+
+Stash İşlemleri: Bir dalda değişiklik yaptıktan sonra diyelim ki çok önemli bir işim çıktı ve branch switch yaptım Stash o değişikliği hafızasında tutarak daha sonra commit atmamızı sağlar
+
+git stash save "asdasdas" 
+daha sonra aynı brancha geçip
+git stash pop ile değişiklikler geri gelir. commite hazır olur
+
+
+
+Tagging: Belirli noktsaları referans almak için kullanılır.
+git tag -a v0.1-data_prep -m "İlk Veri Analizi" 
+
+
+Bu dosyayı değiştirerek commit atacağım.
